@@ -34,7 +34,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
         <cxf:proxy-service configuration-ref="CXF_Configuration" payload="envelope" doc:name="CXF"/>
         <mulexml:dom-to-xml-transformer doc:name="DOM to XML"/>
         <logger message="Original Payload is #[message.payloadAs(java.lang.String)]" level="WARN" doc:name="Payload Input"/>
-        <logger  message="#[xpath3('/sup:invoke/sup:arg0',payload, 'STRING')]"  level="INFO" doc:name="Logger"/>
+        <logger  message="#[xpath3('/sup:invoke/sup:arg0',payload, 'STRING')]"  level="INFO" doc:name="Logger Edited"/>
         <set-variable variableName="pichonVar" value="#[xpath3('/soapenv:Envelope/S:Header/wsa:Action',payload, 'STRING')]" mimeType="text/xml" doc:name="Variable"/>
         <choice doc:name="Choice">
             <when expression="#[flowVars.pichonVar == 'helloService']">
